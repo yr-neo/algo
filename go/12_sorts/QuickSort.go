@@ -1,3 +1,5 @@
+// 快速排序
+
 package _2_sorts
 
 // QuickSort is quicksort methods for golang

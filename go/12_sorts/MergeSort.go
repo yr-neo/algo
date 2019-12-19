@@ -1,3 +1,5 @@
+// 归并排序
+
 package _2_sorts
 
 func MergeSort(arr []int) {

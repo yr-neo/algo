@@ -1,10 +1,8 @@
+// 冒泡排序、插入排序、选择排序
+
 package _1_sorts
 
-/*
-冒泡排序、插入排序、选择排序
- */
-
-//冒泡排序，a是数组，n表示数组大小
+// 冒泡排序，a是数组，n表示数组大小
 func BubbleSort(a []int, n int) {
 	if n <= 1 {
 		return
@@ -15,7 +13,7 @@ func BubbleSort(a []int, n int) {
 		for j := 0; j < n-i-1; j++ {
 			if a[j] > a[j+1] {
 				a[j], a[j+1] = a[j+1], a[j]
-				//此次冒泡有数据交换
+				// 此次冒泡有数据交换
 				flag = true
 			}
 		}
@@ -60,7 +58,7 @@ func SelectionSort(a []int, n int) {
 			}
 		}
 		// 交换
-		a[i], a[minIndex] = a[minIndex],a[i]
+		a[i], a[minIndex] = a[minIndex], a[i]
 
 	}
 }
