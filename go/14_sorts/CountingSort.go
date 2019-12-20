@@ -4,14 +4,18 @@ package _4_sorts
 
 import (
 	"algo_yr/go/00_lib"
+	"errors"
 )
 
-func CountingSort(a []int, n int) {
+func CountingSort(a []int, n int) error {
 	if n <= 1 {
-		return
+		return errors.New("n <= 1")
 	}
 
-	max, min := _0_lib.GetMaxMin(a)
+	max, min, err := _0_lib.GetMaxMin(a)
+	if err != nil {
+		return err
+	}
 	limit := max - min
 
 	c := make([]int, limit+1)
@@ -31,4 +35,5 @@ func CountingSort(a []int, n int) {
 	}
 
 	copy(a, r)
+	return nil
 }

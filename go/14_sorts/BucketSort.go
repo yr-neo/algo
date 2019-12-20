@@ -1,6 +1,6 @@
 // 桶排序
 
-package LinearSort
+package _4_sorts
 
 import (
 	"algo_yr/go/12_sorts"

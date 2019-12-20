@@ -4,6 +4,7 @@ package _4_sorts
 
 import (
 	_0_lib "algo_yr/go/00_lib"
+	"github.com/pkg/errors"
 )
 
 // 十进制
@@ -19,13 +20,16 @@ func getMaxBit(max int) int {
 	return digit
 }
 
-func RadixSort(a []int) {
+func RadixSort(a []int) error {
 	length := len(a)
 	if length <= 1 {
-		return
+		return errors.New("length <= 1")
 	}
 
-	max, min := _0_lib.GetMaxMin(a)
+	max, min, err := _0_lib.GetMaxMin(a)
+	if err != nil {
+		return err
+	}
 
 	radix := 1
 	digit := getMaxBit(max - min)
@@ -59,4 +63,5 @@ func RadixSort(a []int) {
 	for i = range a {
 		a[i] += min
 	}
+	return nil
 }
