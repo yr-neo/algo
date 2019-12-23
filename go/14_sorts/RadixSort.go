@@ -4,7 +4,7 @@ package _4_sorts
 
 import (
 	_0_lib "algo_yr/go/00_lib"
-	"github.com/pkg/errors"
+	"errors"
 )
 
 // 十进制
