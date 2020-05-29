@@ -5,7 +5,7 @@ func buidHeap(a []int, n int) {
 
 	//heapify from the last parent node
 	for i := n / 2; i >= 1; i-- {
-		heapifyUpToDown(a, i, n)
+		heapifyUpToDown_Sort(a, i, n)
 	}
 
 }
@@ -17,13 +17,13 @@ func sort(a []int, n int) {
 	k := n
 	for k >= 1 {
 		swap(a, 1, k)
-		heapifyUpToDown(a, 1, k-1)
+		heapifyUpToDown_Sort(a, 1, k-1)
 		k--
 	}
 }
 
 //heapify from up to down , node index = top
-func heapifyUpToDown(a []int, top int, count int) {
+func heapifyUpToDown_Sort(a []int, top int, count int) {
 
 	for i := top; i <= count/2; {
 
@@ -40,14 +40,14 @@ func heapifyUpToDown(a []int, top int, count int) {
 			break
 		}
 
-		swap(a, i, maxIndex)
+		swap_Sort(a, i, maxIndex)
 		i = maxIndex
 	}
 
 }
 
 //swap two elements
-func swap(a []int, i int, j int) {
+func swap_Sort(a []int, i int, j int) {
 	tmp := a[i]
 	a[i] = a[j]
 	a[j] = tmp
